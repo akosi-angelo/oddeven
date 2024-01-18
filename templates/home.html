@@ -1,0 +1,83 @@
+<!-- home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-size:30px;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      width:500px;
+    }
+
+    input {
+      padding: 15px;
+      font-size: 32px;
+      margin-right: 15px;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      width: 250px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 32px;
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Odd/Even Checker</h2>
+  <form id="oddEvenForm">
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button type="button" onclick="checkOddEven()">Check</button>
+  </form>
+  <!-- Display the result passed from the Python code -->
+  <div class="result" id="result"></div>
+</div>
+
+<script>
+  function checkOddEven() {
+    var inputNumber = document.getElementById("numberInput").value;
+    var resultElement = document.getElementById("result");
+
+    if (inputNumber % 2 === 0) {
+      resultElement.innerHTML = "The number " + inputNumber + " is an even number.";
+    } else {
+      resultElement.innerHTML = "The number " + inputNumber + " is an odd number.";
+    }
+  }
+</script>
+
+</body>
+</html>
