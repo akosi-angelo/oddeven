@@ -1,5 +1,3 @@
-# oddcheck.py
-
 # Import Flask
 from flask import Flask, render_template, request
 
@@ -25,6 +23,7 @@ def check():
     # Render the result.html file with the result and number
     return render_template("result.html", number=number, result=result)
 
-# Run the app
+# Ensure the app is run only when executed directly
 if __name__ == "__main__":
-    app.run(debug=True)
+    # Run the app on 0.0.0.0 (all available interfaces) on port 5000
+    app.run(host='0.0.0.0', port=5000, debug=True)
